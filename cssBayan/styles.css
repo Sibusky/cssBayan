@@ -64,7 +64,7 @@
 
 .accordion__title {
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 3.2rem;
   color: #000;
 }
@@ -89,9 +89,13 @@
 }
 
 .accordion__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.accordion__item:hover .accordion__item-text {
+.accordion__item:hover .accordion__item-image {
   display: block;
 }
 
@@ -130,7 +134,7 @@
   appearance: none;
 }
 
-.accordion__item-input:checked ~ .accordion__item-text {
+.accordion__item-input:checked ~ .accordion__item-image {
   display: block;
 }
 
@@ -144,6 +148,8 @@
   /* background-color: blue; */
 }
 
-.accordion__item-text {
+.accordion__item-image {
   display: none;
+  max-width: 50%;
+  max-height: 50vh;
 }
