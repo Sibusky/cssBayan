@@ -105,6 +105,7 @@
 
 .accordion__item:hover .accordion__item-image {
   display: block;
+  scale: 1;
 }
 
 .accordion__item:has(.accordion__item-input:checked) {
@@ -168,6 +169,7 @@
 
 .accordion__item-input:checked ~ .accordion__item-label .accordion__item-image {
   display: block;
+  scale: 1;
 }
 
 .accordion__item-input:checked
@@ -180,20 +182,22 @@
   display: none;
   max-width: 50%;
   max-height: 30vh;
+  scale: 0;
+  transition: scale 0.5s ease-in-out;
 }
 
 @media screen and (max-width: 850px) {
-    .accordion__item-image {
-        display: none;
-        max-width: 66%;
-        max-height: 50vh;
-      }
+  .accordion__item-image {
+    display: none;
+    max-width: 66%;
+    max-height: 50vh;
   }
+}
 
 @media screen and (max-width: 550px) {
-    .accordion__item-image {
-        display: none;
-        max-width: 80%;
-        max-height: 100%;
-      }
+  .accordion__item-image {
+    display: none;
+    max-width: 80%;
+    max-height: 100%;
   }
+}
