@@ -59,29 +59,91 @@
   letter-spacing: 0;
   margin: 0;
   padding: 0;
-  color: #000;
+  color: #777777;
 }
 
 .accordion__title {
   font-weight: 900;
   font-size: 2rem;
   line-height: 3.2rem;
+  color: #000;
 }
 
 .accordion__list {
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 100%;
+}
+
+.accordion__list:hover .text {
+  color: #000;
+}
+
+.accordion__list:hover {
+  cursor: pointer;
+}
+
+.accordion__list:hover .accordion__item-label-icon {
+  display: block;
 }
 
 .accordion__item {
 }
 
+.accordion__item:hover .accordion__item-text {
+  display: block;
+}
+
 .accordion__item-label {
-    font-weight: 700;
-    font-size: 1.5rem;
-    line-height: 2.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.accordion__item-label:hover {
+  background-color: aqua;
+}
+
+.accordion__item-label-text {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+}
+
+.accordion__item-label-icon {
+  display: none;
+  background-image: url("./images/plus-solid.svg");
+  width: 20px;
+  height: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
 }
 
 .accordion__item-input {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.accordion__item-input:checked ~ .accordion__item-text {
+  display: block;
+}
+
+.accordion__item-input:checked
+  ~ .accordion__item-label
+  .accordion__item-label-icon {
+  background-image: url("./images/minus-solid.svg");
+}
+
+.accordion__item-input:checked ~ .accordion__item-label {
+  /* background-color: blue; */
+}
+
+.accordion__item-text {
+  display: none;
 }
