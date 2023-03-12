@@ -1,0 +1,203 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/fonts.css);
+
+.body {
+  background-color: #fff;
+  min-width: 300px;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.accordion {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+@media screen and (max-width: 850px) {
+  .accordion {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .accordion {
+    width: 90%;
+  }
+}
+
+.accordion__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0;
+  padding: 50px 0;
+}
+
+.text {
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  text-decoration: none;
+  letter-spacing: 0;
+  margin: 0;
+  padding: 0;
+  color: #777777;
+}
+
+.accordion__title {
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 3.2rem;
+  color: #000;
+  margin: 0 0 30px 0;
+}
+
+@media screen and (max-width: 850px) {
+  .accordion__title {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .accordion__title {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+.accordion__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.accordion__list:hover .text {
+  color: #000;
+}
+
+.accordion__list:hover {
+  cursor: pointer;
+}
+
+.accordion__list:hover .accordion__item-label-icon {
+  display: block;
+}
+
+.accordion__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0px 1px 0px 0px #201f1e1f inset;
+  margin: 0;
+  padding: 10px 20px;
+}
+
+.accordion__item:hover .accordion__item-image {
+  display: block;
+  scale: 1;
+}
+
+.accordion__item:has(.accordion__item-input:checked) {
+  background-color: rgba(32, 31, 30, 0.04);
+}
+
+.accordion__item-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.accordion__item-label-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.accordion__item-label-text {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  margin: 0;
+  max-width: 90%;
+}
+
+@media screen and (max-width: 850px) {
+  .accordion__item-label-text {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .accordion__item-label-text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+.accordion__item-label-icon {
+  display: none;
+  background-image: url("./images/plus-solid.svg");
+  width: 20px;
+  height: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+}
+
+.accordion__item-input {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.accordion__item-input:checked ~ .accordion__item-label .accordion__item-image {
+  display: block;
+  scale: 1;
+}
+
+.accordion__item-input:checked
+  ~ .accordion__item-label
+  .accordion__item-label-icon {
+  background-image: url("./images/minus-solid.svg");
+}
+
+.accordion__item-image {
+  display: none;
+  max-width: 50%;
+  max-height: 30vh;
+  scale: 0;
+  transition: scale 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 850px) {
+  .accordion__item-image {
+    display: none;
+    max-width: 66%;
+    max-height: 50vh;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .accordion__item-image {
+    display: none;
+    max-width: 80%;
+    max-height: 100%;
+  }
+}
