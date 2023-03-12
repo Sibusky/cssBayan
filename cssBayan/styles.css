@@ -89,27 +89,37 @@
 }
 
 .accordion__item {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0px 1px 0px 0px #201f1e1f inset;
 }
 
 .accordion__item:hover .accordion__item-image {
   display: block;
 }
 
+.accordion__item:has(.accordion__item-input:checked) {
+  background-color: rgba(32, 31, 30, 0.04);
+}
+
 .accordion__item-label {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
 }
 
-.accordion__item-label:hover {
-  background-color: aqua;
+.accordion__item-label-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .accordion__item-label-text {
@@ -134,7 +144,7 @@
   appearance: none;
 }
 
-.accordion__item-input:checked ~ .accordion__item-image {
+.accordion__item-input:checked ~ .accordion__item-label .accordion__item-image {
   display: block;
 }
 
@@ -144,12 +154,8 @@
   background-image: url("./images/minus-solid.svg");
 }
 
-.accordion__item-input:checked ~ .accordion__item-label {
-  /* background-color: blue; */
-}
-
 .accordion__item-image {
   display: none;
   max-width: 50%;
-  max-height: 50vh;
+  max-height: 30vh;
 }
